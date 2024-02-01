@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team<T> {
+public class Team<T extends Player> {
   private String teamName;
   private List<T> teamMembers = new ArrayList<>();
   private int totalWins = 0;
@@ -19,8 +19,10 @@ public class Team<T> {
   }
 
   public void listTeamMembers() {
-    System.out.println(teamName);
-    System.out.println(teamMembers);
+    System.out.println(teamName + " Roaster: ");
+    for (T member : teamMembers) {
+      System.out.printf("%s - %s\n", member.name(), member.position());
+    }
   }
 
   private int ranking() {

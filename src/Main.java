@@ -1,4 +1,7 @@
-interface Player {}
+interface Player {
+  String name();
+  String position();
+}
 
 record FootballPlayer (String name, String position) implements Player {}
 record BasketballPlayer (String name, String position) implements Player {}
